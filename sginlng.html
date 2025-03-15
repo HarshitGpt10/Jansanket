@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Indian Sign Language Translator - Real-time translation of Indian sign language to multiple languages"/>
+    <meta name="keywords" content="sign language, translator, Indian languages, accessibility"/>
+    <title>Indian Sign Language Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="large"></script>
+</head>
+<body class="font-[&#39;Inter&#39;] bg-gray-50">
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm transition-all duration-300">
+    <div class="max-w-8xl mx-auto px-8 sm:px-12 lg:px-16">
+        <div class="flex justify-between h-16 items-center">
+            <!-- Left-aligned menu links with more spacing -->
+            <div class="flex space-x-12">
+                <a href="#" class="text-gray-700 hover:text-custom transition-all duration-300 hover:scale-105">Home</a>
+                <a href="#" class="text-gray-700 hover:text-custom transition-all duration-300 hover:scale-105">About</a>
+                <a href="#" class="text-gray-700 hover:text-custom transition-all duration-300 hover:scale-105">Help</a>
+                <a href="#" class="text-gray-700 hover:text-custom transition-all duration-300 hover:scale-105">Contact</a>
+            </div>
+
+            <!-- Right-aligned language dropdown and logo with more spacing -->
+            <div class="flex items-center space-x-16">
+                <div class="relative">
+                    <select class="appearance-none bg-white border border-gray-300 text-gray-700 py-2 px-6 pr-10 rounded-lg leading-tight focus:outline-none focus:ring-2 focus:ring-custom hover:border-custom cursor-pointer">
+                        <option>English</option>
+                        <option>Hindi</option>
+                    </select>
+                    <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-500 pointer-events-none"></i> <!-- Dropdown arrow icon -->
+                </div>
+                <img src="img/Untitled%20design.png" alt="Logo" class="h-14"/> <!-- Increased logo size -->
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<main class="pt-16">
+    <section class="relative bg-gradient-to-r from-gray-50 to-gray-100 overflow-hidden">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">Breaking Barriers with Indian Sign Language</h1>
+                    <p class="text-xl text-gray-600 mb-8">Real-time translation bringing sign language communication to everyone. Bridging gaps, connecting hearts.</p>
+                    <button class="bg-custom text-white px-8 py-3 !rounded-button font-medium hover:bg-custom/90 transition-all duration-300 transform hover:scale-105">
+                        Start Translating
+                    </button>
+                </div>
+                <div class="relative flex justify-center">
+                    <img src="img/dalle.jpg" alt="Hero" class="w-3/4 rounded-lg object-contain transition-transform duration-700 hover:scale-105 shadow-md"/>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-900 rounded-lg overflow-hidden aspect-video relative">
+                    <video id="cameraFeed" class="absolute inset-0 w-full h-full object-cover" autoplay></video>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white text-center" id="cameraMessage">
+                            <i class="fas fa-video text-4xl mb-4"></i>
+                            <p>Camera feed will appear here</p>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                        <button class="bg-custom text-white px-6 py-2 !rounded-button transition-all duration-300 hover:scale-105 hover:shadow-lg" onclick="openCamera()">
+                            <i class="fas fa-record-vinyl mr-2"></i>Record
+                        </button>
+                        <button class="bg-white text-gray-900 px-6 py-2 !rounded-button transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                            <i class="fas fa-camera-rotate mr-2"></i>Switch Camera
+                        </button>
+                    </div>
+                </div>
+
+                <script>
+                    function openCamera() {
+                        const videoElement = document.getElementById('cameraFeed');
+                        const cameraMessage = document.getElementById('cameraMessage');
+
+                        // Check if browser supports getUserMedia
+                        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                            navigator.mediaDevices.getUserMedia({ video: true })
+                                .then(function(stream) {
+                                    videoElement.srcObject = stream;
+                                    cameraMessage.style.display = 'none';
+                                })
+                                .catch(function(error) {
+                                    console.error("Error accessing the camera: ", error);
+                                    alert("Unable to access the camera.");
+                                });
+                        } else {
+                            alert("getUserMedia not supported on this browser.");
+                        }
+                    }
+                </script>
+
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium mb-4">Translation Output</h3>
+                        <div class="bg-white rounded-lg p-4 min-h-[200px] border border-gray-200">
+                            <p class="text-gray-600">namste ang delhi ni jji</p>
+                        </div>
+                        <div class="mt-4 flex items-center space-x-4">
+                            <button class="bg-custom text-white px-4 py-2 !rounded-button transition-all duration-300 hover:scale-105">
+                                <i class="fas fa-volume-up mr-2"></i>Play Audio
+                            </button>
+                            <button class="bg-gray-200 text-gray-700 px-4 py-2 !rounded-button transition-all duration-300 hover:scale-105">
+                                <i class="fas fa-download mr-2"></i>Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium mb-4">Language Selection</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">English</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Hindi</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Tamil</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">kokborok</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Malayalam</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Bengali</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Punjabi</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Telugu</button>
+                            <button class="transition-all duration-300 hover:scale-105 hover:shadow-md bg-white border border-gray-200 px-4 py-2 !rounded-button">Marathi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 bg-gray-50 rounded-lg p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <div>
+                        <span class="text-sm text-gray-500">Accuracy</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                            <span class="font-medium">98%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-500">Status</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-circle text-green-500 mr-2"></i>
+                            <span class="font-medium">Connected</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="transition-all duration-300 hover:scale-105 bg-custom text-white px-4 py-2 !rounded-button">
+                        <i class="fas fa-trash-alt mr-2"></i>Clear
+                    </button>
+                    <button class="transition-all duration-300 hover:scale-105 bg-custom text-white px-4 py-2 !rounded-button">
+                        <i class="fas fa-share-alt mr-2"></i>Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <img src="img/Untitled%20design.png" alt="Logo" class="h-16 mb-4"/>
+                <p class="text-gray-400">Breaking language barriers with technology</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Help</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-medium mb-4">Languages</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">English</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Hindi</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Tamil</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Telugu</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-medium mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>© 2024 Indian Sign Language Translator. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
