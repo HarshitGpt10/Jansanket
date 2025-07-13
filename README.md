@@ -102,8 +102,8 @@ To our incredible mentor **Dr. Sanchali Das**, whose support and guidance empowe
 
 ## 📄 Documentation
 
-- 📘 [Final Report PDF](JanSanket_Report.pdf)
-- 🎞️ [PPT Presentation](JanSanket.pptx)
+- 📘 [Final Report PDF](Jansanket_Report.pdf)
+- 🎞️ [PPT Presentation](Jansanket.pptx)
 > 🔒 *Core code/model files kept private for academic integrity.*
 
 ---
