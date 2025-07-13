@@ -67,7 +67,7 @@ JanSanket fills this critical void with an **real-time**, and **regionally inclu
 
 | Live Webcam Input | Translated Output |
 |-------------------|--------------------|
-| ![Camera](static/camera-demo.png) | ![Text](static/output-demo.png) |
+| ![Camera](output.png) | 
 
 ---
 
@@ -102,9 +102,8 @@ To our incredible mentor **Dr. Sanchali Das**, whose support and guidance empowe
 
 ## 📄 Documentation
 
-- 📘 [Final Report PDF](docs/JanSanket_Project_Report.pdf)
-- 🎞️ [PPT Presentation](docs/JanSanket_Presentation.pptx)
-- 📁 Sample Code: [`Webcam_trial`](Webcam_trial/)
+- 📘 [Final Report PDF](JanSanket_Report.pdf)
+- 🎞️ [PPT Presentation](JanSanket.pptx)
 > 🔒 *Core code/model files kept private for academic integrity.*
 
 ---
