@@ -89,7 +89,7 @@ JanSanket fills this critical void with an **real-time**, and **regionally inclu
 
 ## 🧑‍🤝‍🧑 Team
 
-A proud collaboration by final-year CSE students from Bennett University:
+A proud collaboration by 2nd-year CSE students from Bennett University:
 
 - Harshit Gupta
 - Devraj Singh Bhadoria
